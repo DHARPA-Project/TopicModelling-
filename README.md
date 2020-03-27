@@ -7,7 +7,7 @@ As digitally available textual repositories are becoming larger and larger, the 
 1. [The DHARPA Project](#the-dharpa-project)
 2. [Topic Modelling](#topic-modelling)
     2.1 [What is a topic?](#what-is-a-topic?)
-    2.2 [What is topic modelling?](#what-is-topic-modelling?)
+         2.2 [What is topic modelling?](#what-is-topic-modelling?)
 3. [Getting started](#getting-started)
 4. [Installation](#installation)
 5. [Preparing your data](#preparing-your-data)
