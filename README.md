@@ -9,7 +9,6 @@ As digitally available textual repositories are becoming larger and larger, the 
 
    2.1 [What is a topic?](#what-is-a-topic?)
   
-   2.2 [What is topic modelling?](#what-is-topic-modelling?)  
 3. [Getting started](#getting-started)
 4. [Installation](#installation)
 5. [Preparing your data](#preparing-your-data)
@@ -32,4 +31,5 @@ While the ‘digital humanities moment’ has yielded great accomplishments and 
 Before talking about topic modelling and how it works, it is worth spending a few words on what is intended by *topic*. This will also help to clarify how the topic modelling algorithm works and how we should treat the output.
 
 ## What is a topic?
+The model assumes that a corpus has a fixed number of founding topics and that these topics compose each document of the corpus to varying degrees (Lee, 2019). A topic is understood as a set of terms that occur together in a statistically significant way to form a cluster of words. According to this logic, a text can be understood as the combination of such clusters of words, where each cluster is made of words mathematically likely to appear together (Steyvers and Griffiths, 2007). Using contextual information, topic models are able to distinguish between words used with multiple meanings; this ultimately means that the words are also clustered according to similar uses. What happens in practice is that TM runs statistical calculations multiple times until it determines the most likely distribution of words into clusters, i.e. into topics. The procedure guarantees impartial results in terms of which words will appear in each topic, as the topics emerge from the algorithm’s identification of patterns and trends in the texts, rather than the semantic meaning of the words in each document. In this sense, there is no intervention by the researcher.
 
