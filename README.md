@@ -36,3 +36,12 @@ A topic is understood as a set of terms that occur together in a statistically s
 ## Getting started
 There are many variations of the TM algorithm and numerous programs and techniques to implement them. The rationale behind all of them, however, is the same: using statistical modelling to discover topics in a textual collection. Among these very many techniques, Latent Dirichlet Allocation (LDA - [Blei, Ng and Jordan 2003](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)) is perhaps the most widely used. In this workflow, we use Gensim, a Python library for topic modelling, document indexing and similarity retrieval with large corpora which also implements LDA. This software depends on the Python packages NumPy and Scipy, which must be installed prior to installing Gensim. A major advantage of using Gensim is its memory efficiency, significantly higher than other software (e.g., Mallet) which have often issues handling big data. More information about Gensim, including the offical documentation, can be found [here](https://pypi.org/project/gensim/).
 
+## Installation
+Please install Python 3.6 or higher to run the notebook. The notebook makes use
+of the dependencies found in `requirements.txt`. Install the dependencies with 
+pip by running the following line of code in your terminal.
+
+```sh
+pip install -r requirements.txt
+```
+
