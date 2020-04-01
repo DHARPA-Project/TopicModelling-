@@ -47,10 +47,14 @@ pip install -r requirements.txt
 ## Preparing your data
 This step is concerned with tokenization, lowercasing, stemming, lemmatizing, removing stopwords, numbers, punctuation marks, words with less than three characters. In principle, it is optional as the train-topic command will work on whichever version of the dataset is used. However, pre-processing the data is important and has several advantages. First and foremost, it will likely make the TM results more reliable and more interpretable. For instance, running TM on languages that are rich in articles, pronouns, prepositions, etc., will almost certainly result in poorly interpretable topics. Second, pre-processing the data will remove most OCR mistakes which are always present in digital textual collections. This is especially true for corpora such as historical datasets, repositories of underdocumented languages, handwriting digitised archives. Deciding which of the pre-processing operations should be performed depends on many factors such as the language of the dataset, the type of data, the individual research questions. It is therefore paramount that this step is tackled critically by the researcher as each one of the interventions will have consequences on how the TM algorithm will process the data and therefore on the results. Here's a short explanation of each operation:
 - Tokenization: Split the text into sentences and the sentences into words. In other words, this operation establishes the word boundaries (i.e., tokens) which is very helpful for finding patterns. It is also the typical step prior to stemming and lemmatization; 
-- Lowercasing: Lowercase the words. This operation is a double-edged sword. It can be effective at yielding potentially better results in the case of relatively small datasets or datatsets with a high percentage of OCR mistakes. For instance if lowercasing is not performed, the algorithm will treat *USA*, *Usa*, *usa*, *UsA*, *uSA*, etc. as distinct tokens, even though they all refer to the same entity. On the other hand, if the dataset does not contain such OCR mistakes, then lowercasing will make distinguishing between homonyms very difficult thus ultimately making the topics' interpretation much harder.
-perhaps combining different operations multiple times to assess the most effective combination.   and remove punctuation.
-Words that have fewer than 3 characters are removed.
-All stopwords are removed.
+- Lowercasing: Lowercase the words. This operation is a double-edged sword. It can be effective at yielding potentially better results in the case of relatively small datasets or datatsets with a high percentage of OCR mistakes. For instance, if lowercasing is not performed, the algorithm will treat *USA*, *Usa*, *usa*, *UsA*, *uSA*, etc. as distinct tokens, even though they all refer to the same entity. On the other hand, if the dataset does not contain such OCR mistakes, then it may become difficult to distinguish between homonyms which will make interpreting the topics much harder;
+- Stemming: 
+- Lemmatizing:
+- Removing stopwords and words with less than three characters:
+- Removing numbers and punctuation marks:
+
+perhaps combining different operations multiple times to assess the most effective combination.
+
 Words are lemmatized — words in third person are changed to first person and verbs in past and future tenses are changed into present.
 Words are stemmed — words are reduced to their root form. 
 To verify whether the preprocessing happened correctly, we’ll make a word cloud using the wordcloud package to get a visual representation of most common words. It is key to understanding the data and ensuring we are on the right track, and if any more preprocessing is necessary before training the model.
