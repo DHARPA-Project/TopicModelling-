@@ -11,8 +11,8 @@ As digitally available textual repositories are becoming larger and larger, the 
   
 3. [Getting started](#getting-started)
 4. [Installation](#installation)
-5. [Preparing the data (1 of 2)](#preparing-the-data-(-1-of-2-))
-6. [Preparing the data (2 of 2)](#preparing-the-data-(-2-of-2-))
+5. [Preparing the data (1 of 2)](#preparing-the-data-(1-of-2))
+6. [Preparing the data (2 of 2)](#preparing-the-data-(2-of-2))
 7. [Determining the number of topics](#determining-the-number-of-topics)
 8. [Running topic modelling](#running-topic-modelling)
 9. [Categorising the topics](#categorising-the-topics)
