@@ -56,4 +56,6 @@ Deciding which of the pre-processing operations should be performed depends on m
 
 These operations will need to be quantitatively and qualitatively tested each time before deciding which ones to actually perform. This is of course true not just for TM, but in general for all NLP tasks. It is important to remember that each one of these steps is an additional layer of text manipualation and has direct consequences of both the data and the results. It is therefore critical that researchers assess their intervention carefully. Trying different combinations is also key to understanding the data thus ultimately facilitating a more accurate interpretation of the topics.
 
+## Preparing the data (2 of 2)
+
 
