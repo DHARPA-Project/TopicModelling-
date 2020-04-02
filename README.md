@@ -11,7 +11,7 @@ As digitally available textual repositories are becoming larger and larger, the 
   
 3. [Getting started](#getting-started)
 4. [Installation](#installation)
-5. [Preparing the data](#preparing-the-data)
+5. [Preparing the data (1 of 2)](#preparing-the-data-(1-of-2-))
 6. [Preparing the data (2 of 2)](#preparing-the-data-2-of-2)
 7. [Determining the number of topics](#determining-the-number-of-topics)
 8. [Running topic modelling](#running-topic-modelling)
@@ -45,7 +45,7 @@ pip by running the following line of code in your terminal.
 ```sh
 pip install -r requirements.txt
 ```
-## Preparing your data
+## Preparing the data (1 of 2)
 This step is concerned with tokenization, lowercasing, stemming, lemmatization, removing stopwords and words with less than three characters, removing noise (e.g., numbers, punctuation marks, special characters). In principle, it is optional as the train-topic command will work on whichever version of the dataset is used. In reality, pre-processing the data is key to the analysis for several reasons. First and foremost, it will likely make the TM results more reliable and more interpretable. For instance, running TM on languages that are rich in articles, pronouns, prepositions, etc., will almost certainly result in poorly interpretable topics. Second, pre-processing the data will remove most OCR mistakes which are always present in digital textual collections. This is especially true for corpora such as historical datasets, repositories of underdocumented languages, digitised archives from handwritten texts. Third, it will reduce the size f your collections thus decreasing the required processing power. Fourth, it can be considered as a first data exploration which will allow the researcher to look more closely at their data. 
 Deciding which of the pre-processing operations should be performed depends on many factors such as the language of the dataset, the type of data, the individual research questions. It is therefore paramount that this step is tackled **critically** by the researcher as each one of their interventions will have consequences on how the TM algorithm will process the data and therefore on the results. Here's a short explanation of each operation:
 - **Tokenization**: Split the text into sentences and the sentences into words. In other words, this operation establishes the word boundaries (i.e., tokens) which is very helpful for finding patterns. It is also the typical step prior to stemming and lemmatization; 
