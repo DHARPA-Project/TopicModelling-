@@ -7,9 +7,9 @@ As digitally available textual repositories are becoming larger and larger, the 
 1. [The DHARPA Project](#1-the-dharpa-project)
 2. [Topic Modelling](#2-topic-modelling)
 
-   2.1 [What is a topic?](#2-.-1-what-is-a-topic)
+   2.1 [What is a topic?](#21-what-is-a-topic)
    
-   2.2 [When should I use it?](#2-.-2-when-should-i-use-it)
+   2.2 [When should I use it?](#22-when-should-i-use-it)
   
 3. [Getting started](#3-getting-started)
 4. [Installation](#4-installation)
