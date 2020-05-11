@@ -12,7 +12,7 @@ As digitally available textual repositories are becoming larger and larger, the 
    2.2 [When should I use it?](#2-.-2-when-should-i-use-it)
   
 3. [Getting started](#3-getting-started)
-4. [Installation](#installation)
+4. [Installation](#4-installation)
 5. [A critical approach to preparing the data](#5-a-critical-approach-to-preparing-the-data)
 6. [Preparing the data for Gensim](#6-preparing-the-data-for-Gensim)
 7. [Determining the number of topics](#7-determining-the-number-of-topics)
