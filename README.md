@@ -85,7 +85,7 @@ Now the BOW model will be a list of (word_id, word_frequency) 2-tuples like this
 [[(0, 1), (1, 2), (2, 2), (3, 1), (5, 1)]]
 ```
 
-The way the dictionary is designed in the first place determines the complexity of the model and, as any other step, ultimately impacts the results. You can for instance choose to map the text as it is (i.e., frequency), by calculating  inverse of document frequency, bi-grams) 
+There are different ways to design the dictionary and to calculate the presence of the words. For instance, it is possible to map the text as it is by using sheer frequency (as in the example above), by calculating  inverse of document frequency (tf–idf) or by using collocations (bi-grams). Choosing one method over anothe determines the complexity of the model and, as any other step, ultimately impacts the results. In this workflow, we will experiment with both TF-IDF and bi-grams to compare the outputs and assess the difference in each method.    
 
 
 
