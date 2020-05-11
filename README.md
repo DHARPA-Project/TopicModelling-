@@ -14,7 +14,7 @@ As digitally available textual repositories are becoming larger and larger, the 
 3. [Getting started](#3-getting-started)
 4. [Installation](#4-installation)
 5. [A critical approach to preparing the data](#5-a-critical-approach-to-preparing-the-data)
-6. [Preparing the data for Gensim](#6-preparing-the-data-for-Gensim)
+6. [Preparing the data](#6-preparing-the-data)
 7. [Determining the number of topics](#7-determining-the-number-of-topics)
 8. [Running topic modelling](#8-running-topic-modelling)
 9. [Categorising the topics](#9-categorising-the-topics)
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 This step is concerned with tokenization, lowercasing, stemming, lemmatization, removing stopwords and words with less than three characters, removing noise (e.g., numbers, punctuation marks, special characters). In principle, the step is optional as the train-topic command will work on whichever version of the dataset is used. In reality, pre-processing the data is key to the analysis for several reasons. First and foremost, it will likely make the TM results more reliable and more interpretable. For instance, running TM on languages that are rich in articles, pronouns, prepositions, etc., will almost certainly result in poorly interpretable topics. Second, pre-processing the data will remove most OCR mistakes which are always present in digital textual collections to various degrees. This is especially true for corpora such as historical datasets, repositories of underdocumented languages, or digitised archives from handwritten texts. Third, it will reduce the size of the collection thus decreasing the required processing power. Fourth, it is *de facto* a data exploration step which will allow the researcher to look more closely at their data.
 
 Deciding which of the pre-processing operations should be performed depends on many factors such as the language of the dataset, the type of data, the individual research questions. It is therefore paramount that this step is tackled **critically** by the researcher as each one of their interventions will have consequences on how the TM algorithm will process the data and therefore on the results. Here's a short explanation of each operation:
-- **Tokenization**: Split the text into sentences and the sentences into words. In other words, this operation establishes the word boundaries (i.e., tokens) a very helpful way of finding patterns. It is also the typical step prior to stemming and lemmatization; 
+- **Tokenization**: Split the text into sentences and/or the sentences into words. In other words, this operation establishes the word boundaries (i.e., tokens) a very helpful way of finding patterns. It is also the typical step prior to stemming and lemmatization; 
 - **Lowercasing**: Lowercase the words. This operation is a double-edged sword. It can be effective at yielding potentially better results in the case of relatively small datasets or datatsets with a high percentage of OCR mistakes. For instance, if lowercasing is not performed, the algorithm will treat *USA*, *Usa*, *usa*, *UsA*, *uSA*, etc. as distinct tokens, even though they may all refer to the same entity. On the other hand, if the dataset does not contain such OCR mistakes, then it may become difficult to distinguish between homonyms which will make interpreting the topics much harder;
 - **Stemming/Lemmatization**: Reduce inflection in words (e.g. states --> state). Although similar, stemming should not be confused with lemmatization. While the latter reduces the inflected word to the actual root form (e.g., better --> good), the former outputs a canonical form of the original word (e.g., past and future tense --> present tense), and not the grammatical root. Performing or not either of these operations is very much dependant on the dataset's language as in terms of TM, they may not affect the output *per se*;
 - **Removing stopwords and words with less than three characters**: Remove low information words. These are typically words such as articles, pronouns, prepositions, conjunctions, etc. which are not semantically salient. There are numerous stopword lists available for many, though not all, languages which can be easily adapted to the individual researcher's needs. Removing words with less than three characters may additionally remove many OCR mistakes. Both these operations have the dual advantage of yielding more reliable results while reducing the size of the dataset, thus in turn reducing the required processing power. This step can therefore hardly be considered optional in TM;
@@ -67,12 +67,25 @@ Each one of these interventions will need to be quantitatively and qualitatively
 ## 6. Preparing the data for Gensim
 This step is concerned with transforming the textual data in a format that will serve as an input for training the Gensim LDA model. What happens in practice is that the documents in the collection are converted into a vector representation called Bag of Words (BOW). A BOW is a way to represent the occurrence of words within a document without considering any structural information (e.g., grammar) other than whether known words occur or not in the documents. The intuition behind the BOW model is based on the semantic theory of language usage (Harris, 1954: 156) according to which words that are used and occur in the same contexts tend to purport similar meanings. If the meaning of a word can be inferred by its context, the opposite is true as well; words found in different contexts tend to purport different meanings.
 
-A BOW model involves two things: **1) a dictionary** of known words (i.e., tokens) and **2) a measure** of the presence of such known words. In practice, the dictionary converts the text into numbers by indexing the words. Consider the following example: let's assume I want to create a dictionary for BOW of the words in the sentence
+A BOW model involves two things: **1) a dictionary** of known words (i.e., tokens) and **2) a measure** of the presence of such known words. In practice, the dictionary converts the text into numbers by indexing the words. Consider the following example: let's assume I want to create a dictionary for BOW of the following sentence
 
 ```sh
 My name is Lorella. What is your name
 ```
-The indexing will be e their presence (e.g., frequency, inverse of document frequency, bi-grams) determines the complexity of the model and, as any other step, ultimately impacts the results. Once created, the BOW model will look like a list of (word_id, word_frequency) 2-tuples.
+The dictionary will be
+
+```sh
+My name is Lorella. What is your name
+0   1    2    3      4    2   5    1
+```
+
+Now the BOW model will be a list of (word_id, word_frequency) 2-tuples like this:
+
+```sh
+[[(0, 1), (1, 2), (2, 2), (3, 1), (5, 1)]]
+```
+
+The way the dictionary is designed in the first place determines the complexity of the model and, as any other step, ultimately impacts the results. You can for instance choose to map the text as it is (i.e., frequency), by calculating  inverse of document frequency, bi-grams) 
 
 
 
