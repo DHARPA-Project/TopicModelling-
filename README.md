@@ -7,19 +7,19 @@ As digitally available textual repositories are becoming larger and larger, the 
 1. [The DHARPA Project](#1-the-dharpa-project)
 2. [Topic Modelling](#2-topic-modelling)
 
-   2.1 [What is a topic?](#what-is-a-topic)
+   2.1 [What is a topic?](#2.1-what-is-a-topic)
    
-   2.2 [When should I use it?](#when-should-i-use-it)
+   2.2 [When should I use it?](#2.2-when-should-i-use-it)
   
-3. [Getting started](#getting-started)
-4. [Installation](#installation)
-5. [Preparing the data (1 of 2)](#preparing-the-data-1-of-2)
-6. [Preparing the data (2 of 2)](#preparing-the-data-2-of-2)
-7. [Determining the number of topics](#determining-the-number-of-topics)
-8. [Running topic modelling](#running-topic-modelling)
-9. [Categorising the topics](#categorising-the-topics)
-10. [Historicise the topics](#historicise-the-topics)
-11. [Visualise the topics](#visualise-the-topics)
+3. [Getting started](#3-getting-started)
+4. [Installation](#i4-nstallation)
+5. [Preparing the data (1 of 2)](#5-preparing-the-data-1-of-2)
+6. [Preparing the data (2 of 2)](#6-preparing-the-data-2-of-2)
+7. [Determining the number of topics](#7-determining-the-number-of-topics)
+8. [Running topic modelling](#8-running-topic-modelling)
+9. [Categorising the topics](#9-categorising-the-topics)
+10. [Historicise the topics](#10-historicise-the-topics)
+11. [Visualise the topics](#11-visualise-the-topics)
 12. [Remarks](#remarks)
 13. [License](#license)
 14. [Links](#links)
@@ -37,7 +37,7 @@ Before talking about TM and how it works, it is worth spending a few words on wh
 A topic is understood as a set of terms that occur together in a statistically significant way to form a cluster of words. According to this logic, a text can be understood as the combination of such clusters of words, where each cluster is made of words mathematically likely to appear together (Steyvers and Griffiths 2007). The model assumes that a corpus has a fixed number of founding topics and that these topics compose each document of the corpus to varying degrees (Lee 2019). Using contextual information, topic models distinguish when words are used with multiple meanings in different contexts; this ultimately means that the words are also clustered according to similar uses. What happens in practice is that TM runs statistical calculations multiple times until it determines the most likely distribution of words into clusters, i.e. into topics. The procedure guarantees impartial results in terms of which words will appear in each topic, as the topics emerge from the algorithm’s identification of patterns and trends in the texts, rather than the potentially subjective interpretation of the semantic meaning of the words in each document. In this sense, there is no intervention from the researcher. 
 
 ## 2.2 When should I use it?
-This analytical tool works the best with large collections of unstructured text (i.e., without any machine-readable annotations) and when the main purpose is to obtain a general overview of the topics discussed in the corpus. As long as it is unstructured, the corpus can be just about anything (e.g., emails, newspapers' headlines, newspapers' articles, a standard .txt document). For this, TM is an excellent distant reading tool that may be used as a data exploration technique, for instance to quickly categorise documents within a collection without having to read them all. A practical example of its use may be libraries that need to label digital collections for archiving purposes. Its potential, however, is most fully reached when working in tandem with expert knowledge. To help clarify the application of TM and show how it works in practice, in this workflow we will apply TM to a dataset of Italian immigrant newspapers published in the United States between 1898 and 1930 [*ChroniclItaly 3.0*] to answer a real research question.
+This analytical tool works the best with large collections of unstructured text (i.e., without any machine-readable annotations) and when the main purpose is to obtain a general overview of the topics discussed in the corpus. As long as it is unstructured, the corpus can be just about anything (e.g., emails, newspapers' headlines, newspapers' articles, a standard .txt document). For this, TM is an excellent distant reading tool that may be used as a data exploration technique, for instance to quickly categorise documents within a collection without having to read them all. A practical example of its use may be libraries that need to label digital collections for archiving purposes. Its potential, however, is most fully reached when working in tandem with expert knowledge. To help clarify the application of TM and show how it works in practice, in this workflow we will apply TM to answer a real research question. As daset, we will use *ChroniclItaly 3.0* (Viola 2020), a collection of Italian immigrant newspapers published in the United States between 1898 and 1930.
 
 ## Getting started
 There are many variations of the TM algorithm and numerous programs and techniques to implement them. The rationale behind all of them, however, is the same: using statistical modelling to discover topics in a textual collection. Among these very many techniques, Latent Dirichlet Allocation (LDA - [Blei, Ng and Jordan 2003](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)) is perhaps the most widely used. In this workflow, we use Gensim, a Python library for topic modelling, document indexing and similarity retrieval which also implements LDA. This software depends on the Python packages NumPy and Scipy, which must be installed prior to installing Gensim. Although in principle scholars are free to use whichever TM program they feel more comfortable with, a major advantage of using Gensim is its memory efficiency, significantly higher than other software (e.g., Mallet) which have often issues handling big data. More information about Gensim, including the offical documentation, can be found [here](https://pypi.org/project/gensim/).
