@@ -23,7 +23,7 @@ As digitally available textual repositories are becoming larger and larger, the 
 
    6.1 [Determining the 'optimal' number of topics](#61-determining-the-optimal-number-of-topics)
    
-   6.2 [Perplexity and coherence](62-perplexity-and-coherence)
+   6.2 [Perplexity and coherence](#62-perplexity-and-coherence)
    
 7. [Visualising the topics](#7-running-topic-modelling)
 8. [Categorising the topics](#8-categorising-the-topics)
