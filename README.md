@@ -14,18 +14,26 @@ As digitally available textual repositories are becoming larger and larger, the 
 3. [Getting started](#3-getting-started)
 4. [Installation](#4-installation)
 5. [A critical approach to preparing the data](#5-a-critical-approach-to-preparing-the-data)
-6. [Preparing the data](#6-preparing-the-data)
-7. [Determining the number of topics](#7-determining-the-number-of-topics)
-8. [Running topic modelling](#8-running-topic-modelling)
-9. [Categorising the topics](#9-categorising-the-topics)
-10. [Historicise the topics](#10-historicise-the-topics)
-11. [Visualise the topics](#11-visualise-the-topics)
-12. [Remarks](#remarks)
-13. [License](#license)
-14. [Links](#links)
-15. [References](#references)
-16. [The team](#the-team)
-17. [How to cite](#how-to-cite)
+
+   5.1 [Preparing the data (1 of 2)](#51-preparing-the-data-1-of-2)
+   
+   5.2 [Preparing the data (2 of 2)](#52-preparing-the-data-2-of-2)
+   
+6. [Building the topic model](#6-building-the-topic-model)
+
+   6.1 [Determining the number of topics](#61-determining-the-number-of-topics)
+   
+   6.2 [Perplexity and coherence](62-perplexity-and-coherence)
+   
+7. [Visualising the topics](#7-running-topic-modelling)
+8. [Categorising the topics](#8-categorising-the-topics)
+9. [Historicise the topics](#9-historicise-the-topics)
+10. [Remarks](#10-remarks)
+11. [License](#license)
+12. [Links](#links)
+13. [References](#references)
+14. [The team](#the-team)
+15. [How to cite](#how-to-cite)
 
 ## 1. The DHARPA Project
 While the ‘digital humanities moment’ has yielded great accomplishments and enthusiastic interdisciplinary cooperations across the humanities and between the humanities and the sciences, concerns have been raised about the little transparency in digital practices as well as the difficulty of replicating studies due to the lack of data access or standardised practices as well as unclear methodological processes (Faull et al 2016; Jakacki et al 2016, 2015; O’ Sullivan 2019). Such concerns have for instance led scholars to claim that digital humanities is still in “search of a methodology” (Dobson 2019) and the metaphor of the 'black box' has started to be used (Smith 2014) to describe the apparent loss of human agency in the digital reseach process. This could be to some extent due to the fact that traditional historical inquiry itself has in some ways been like a “Mechanical Turk,” with the decisions and interventions made by the researcher hidden from view and only the well-oiled and seemingly autonomous product on display. The DHARPA Project aims to reverse this trend. We want to encourage historians and digital humanities scholars to lift the lid, to show how the application of their expertise works in tandem with technology to produce knowledge, how even digitally enabled research is not a product but a process, reliant on the critical engagement of the scholar. In this workflow, we aim to promote a self-reflective analysis of the interaction of technology and humanities practice and we use TM as a case study.   
@@ -53,9 +61,12 @@ pip by running the following line of code in your terminal.
 pip install -r requirements.txt
 ```
 ## 5. A critical approach to preparing the data
+Deciding which of the pre-processing operations should be performed depends on many factors such as the language of the dataset, the type of data, the individual research questions. It is therefore paramount that this step is tackled **critically** by the researcher as each one of their interventions will have consequences on how the TM algorithm will process the data and therefore on the results.
+
+## 5.1 Preparing the data (1 of 2)
 This step is concerned with tokenization, lowercasing, stemming, lemmatization, removing stopwords and words with less than three characters, removing noise (e.g., numbers, punctuation marks, special characters). In principle, the step is optional as the train-topic command will work on whichever version of the dataset is used. In reality, pre-processing the data is key to the analysis for several reasons. First and foremost, it will likely make the TM results more reliable and more interpretable. For instance, running TM on languages that are rich in articles, pronouns, prepositions, etc., will almost certainly result in poorly interpretable topics. Second, pre-processing the data will remove most OCR mistakes which are always present in digital textual collections to various degrees. This is especially true for corpora such as historical datasets, repositories of underdocumented languages, or digitised archives from handwritten texts. Third, it will reduce the size of the collection thus decreasing the required processing power. Fourth, it is *de facto* a data exploration step which will allow the researcher to look more closely at their data.
 
-Deciding which of the pre-processing operations should be performed depends on many factors such as the language of the dataset, the type of data, the individual research questions. It is therefore paramount that this step is tackled **critically** by the researcher as each one of their interventions will have consequences on how the TM algorithm will process the data and therefore on the results. Here's a short explanation of each operation:
+ Here's a short explanation of each operation:
 - **Tokenization**: Split the text into sentences and/or the sentences into words. In other words, this operation establishes the word boundaries (i.e., tokens) a very helpful way of finding patterns. It is also the typical step prior to stemming and lemmatization; 
 - **Lowercasing**: Lowercase the words. This operation is a double-edged sword. It can be effective at yielding potentially better results in the case of relatively small datasets or datatsets with a high percentage of OCR mistakes. For instance, if lowercasing is not performed, the algorithm will treat *USA*, *Usa*, *usa*, *UsA*, *uSA*, etc. as distinct tokens, even though they may all refer to the same entity. On the other hand, if the dataset does not contain such OCR mistakes, then it may become difficult to distinguish between homonyms which will make interpreting the topics much harder;
 - **Stemming/Lemmatization**: Reduce inflection in words (e.g. states --> state). Although similar, stemming should not be confused with lemmatization. While the latter reduces the inflected word to the actual root form (e.g., better --> good), the former outputs a canonical form of the original word (e.g., past and future tense --> present tense), and not the grammatical root. Performing or not either of these operations is very much dependant on the dataset's language as in terms of TM, they may not affect the output *per se*;
@@ -64,7 +75,7 @@ Deciding which of the pre-processing operations should be performed depends on m
 
 Each one of these interventions will need to be quantitatively and qualitatively tested and assed by the researcher every time before deciding which ones to actually perform. This is of course true not just for TM, but in general for all NLP tasks. It is important to remember that each one of these steps is an additional layer of text manipualation and has direct, heavy consequences on the data and therefore on the results. It is critical that researchers assess carefully to what degree they want to intervene on their data. For this reason, this part of the digital analysis should not be considered as separate from the analysis of the results or from the results themselves. On the contrary, it is an **integral part** of the entire digital research process. 
 
-## 6. Preparing the data
+## 5.2 Preparing the data (2 of 2)
 This step is concerned with transforming the textual data in a format that will serve as an input for training the Gensim LDA model. What happens in practice is that the documents in the collection are converted into a vector representation called Bag of Words (BOW). A BOW is a way to represent the occurrence of words within a document without considering any structural information (e.g., grammar) other than whether known words occur or not in the documents. The intuition behind the BOW model is based on the semantic theory of language usage (Harris, 1954: 156) according to which words that are used and occur in the same contexts tend to purport similar meanings. If the meaning of a word can be inferred by its context, the opposite is true as well; words found in different contexts tend to purport different meanings.
 
 A BOW model involves two things: **1) a dictionary** of known words (i.e., tokens) and **2) a measure** of the presence of such known words. In practice, the dictionary converts the text into numbers by indexing the words. Consider the following example: let's assume I want to create a dictionary for BOW of the following sentence
@@ -87,7 +98,13 @@ Now the BOW model will be a list of (word_id, word_frequency) 2-tuples like this
 
 There are different ways to design the dictionary and to calculate the presence of words. For instance, it is possible to map the text as it is by using sheer frequency (as in the example above), by calculating  inverse of document frequency (TF–IDF) or by using collocations (bigrams). TF-IDF is a statistical calculation that aims to reflect how important a word is (i.e., weight) to a document in a collection of texts (Rajaraman & Ullman 2011). The TF–IDF value increases proportionally to the number of times a word appears in the document in relation to the number of documents in the corpus that contain that word. This calculation accounts for the fact that some words appear more frequently in general and therefore, their weight is relative. Bigrams are contiguous sequences of two items from a text and they may provide a way to identify meaningful collocations. It should be said, however, that bigrams *per se* do not necessairily entail meaningful results, as not all consecutive words automatically reflect phrases. Thus, they need to be paired with methods to filter for the most meaningful sequences that will then be more likely to be collocations. 
 
-Choosing one method over another determines the complexity of the model and, as any other step, ultimately impacts the results. In this workflow, we will experiment with both TF-IDF and bigrams to compare the different outputs and critically assess each method.    
+Choosing one method over another determines the complexity of the model and, as any other step, ultimately impacts the results. In this workflow, we will experiment with both TF-IDF and bigrams to compare the different outputs and critically assess each method.
+
+## 6. Building the topic model
+## 6.1 Determining the number of topics
+## 6.2 Perplexity and coherence
+
+
 
 
 
