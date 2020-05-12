@@ -101,13 +101,13 @@ There are different ways to design the dictionary and to calculate the presence 
 Choosing one method over another determines the complexity of the model and, as any other step, ultimately impacts the results. In this workflow, we will experiment with both TF-IDF and bigrams to compare the different outputs and critically assess each method.
 
 ## 6. Building the topic model
-Once the corpus and dictionary have been created, the LDA model can be trained. The only parameter that still needs to be provided is the number of topics, which of course is not known in advance and therefore, the first time, will be arbitrary. 
+Once the corpus and the dictionary have been created, the LDA model can be trained. The only parameter that still needs to be provided is the number of topics, which of course is not known in advance and therefore, the first time, will be arbitrary. 
 
 ## 6.1 Determining the 'optimal' number of topics
-In literature, there is disagreement about the number of topics should be determined. Some researchers confide in statistical methods (i.e. perplexity, coherence score) to determine the number of topics that is mathematically more accurate. However, some have argued that 'mathematically more accurate' does not automatically entail that the topics will be more interpretable (Jacobi et al., 2015, p. 7). Other researchers prefer running the train-topics command multiple times with a different number of topics and then compare the different models' composition and topics' variety. The latter approach allows the researcher to examine the various topic structures carefully before determining the number of topics that seems to offer the most coherent thematic breakdown of the corpus. In this sense, this approach relies heavily on expert's knowledge. Others yet build many LDA models with different numbers of topics and simply pick the one that gives the highest coherence value.  
+In literature, there is disagreement about how the number of topics should be determined. Some researchers confide in statistical methods (i.e. perplexity, coherence score) to determine the number of topics that is mathematically more accurate. However, some have argued that 'mathematically more accurate' does not automatically entail that the topics will be more interpretable (Jacobi et al., 2015, p. 7). Other researchers prefer running the train-topics command multiple times with a different number of topics and then compare the different models' composition and topics' variety. The latter approach allows the researcher to examine the various topic structures carefully before determining the number of topics that seems to offer the most coherent thematic breakdown of the corpus. In this sense, this approach relies heavily on the expert's knowledge. Others yet build many LDA models with different numbers of topics and simply pick the one that gives the highest coherence value. Once more, understanding how each choice will impact on the results is essential for informed decision making.   
 
 ## 6.2 Perplexity and coherence
-Model perplexity and topic coherence provide a way to measure the quality of a topic model. 
+Model perplexity and topic coherence are two ways to measure the quality of a topic model. 
 
 
 
