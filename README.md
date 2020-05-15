@@ -9,7 +9,7 @@ As digitally available textual repositories are becoming larger and larger, the 
 
    2.1 [What is a topic?](#21-what-is-a-topic)
    
-   2.2 [When should I use it?](#22-when-should-i-use-it)
+   2.2 [When should I use TM?](#22-when-should-i-use-tm)
   
 3. [Getting started](#3-getting-started)
 4. [Installation](#4-installation)
@@ -28,12 +28,13 @@ As digitally available textual repositories are becoming larger and larger, the 
 7. [Understanding the topics through visualisation](#7-understanding-the-topics-through-visualisation)
 8. [Topics distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
-10. [Remarks](#10-remarks)
-11. [License](#license)
-12. [Links](#links)
-13. [References](#references)
-14. [The team](#the-team)
-15. [How to cite](#how-to-cite)
+10. [Conclusions](#10-conclusions)
+11. [Remarks](#11-remarks)
+12. [License](#12-license)
+13. [Links](#13-links)
+14. [References](#14-references)
+15. [The team](#15-the-team)
+16. [How to cite](#16-how-to-cite)
 
 ## 1. The DHARPA Project
 While the ‘digital humanities moment’ has yielded great accomplishments and enthusiastic interdisciplinary cooperations across the humanities and between the humanities and the sciences, concerns have been raised about the little transparency in digital practices as well as the difficulty of replicating studies due to the lack of data access or standardised practices as well as unclear methodological processes (Faull et al 2016; Jakacki et al 2016, 2015; O’ Sullivan 2019). Such concerns have for instance led scholars to claim that digital humanities is still in “search of a methodology” (Dobson 2019) and the metaphor of the 'black box' has started to be used (Smith 2014) to describe the apparent loss of human agency in the digital reseach process. This could be to some extent due to the fact that traditional historical inquiry itself has in some ways been like a “Mechanical Turk,” with the decisions and interventions made by the researcher hidden from view and only the well-oiled and seemingly autonomous product on display. The DHARPA Project aims to reverse this trend. We want to encourage historians and digital humanities scholars to lift the lid, to show how the application of their expertise works in tandem with technology to produce knowledge, how even digitally enabled research is not a product but a process, reliant on the critical engagement of the scholar. In this workflow, we aim to promote a self-reflective analysis of the interaction of technology and humanities practice and we use TM as a case study.   
