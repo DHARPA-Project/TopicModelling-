@@ -26,7 +26,7 @@ As digitally available textual repositories are becoming larger and larger, the 
    6.2 [Perplexity and coherence](#62-perplexity-and-coherence)
    
 7. [Understanding the topics through visualisation](#7-understanding-the-topics-through-visualisation)
-8. [Categorising the topics](#8-categorising-the-topics)
+8. [Topics distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
 10. [Remarks](#10-remarks)
 11. [License](#license)
@@ -115,6 +115,8 @@ An effective way to understand the topics is by evaluating the term distribution
 LDA.vis also allows for a general visualisation of the topics (left panel view) (i.e., the larger the areas of the circles, the higher the weight of the topics in the corpus) and their distribution across the corpus (i.e., inter-topic differences) (Sievert & Shirley 2014). It is also possible to visualise the conditional distribution of a select a term (by hovering over it) over topics (i.e., which topics share the same keywords). 
 
 Finally, users can visualise the most relevant terms for a cluster of topics by applying *k-means clustering* in the global view panel (left). The k-mean value is calculated as the weighted average of the term distributions of the individual topics in the cluster. This allows for a finer analysis of the semantic space shared by a cluster of topics, ultimately improving interpretability. The terms are ranked according to *relevance* (ibid.), that is in decreasing order of probability.
+
+## 8. Topics distribution
 
 
 
