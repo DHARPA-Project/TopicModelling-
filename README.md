@@ -26,7 +26,7 @@ As digitally available textual repositories are becoming larger and larger, the 
    6.2 [Perplexity and coherence](#62-perplexity-and-coherence)
    
 7. [Understanding the topics through visualisation](#7-understanding-the-topics-through-visualisation)
-8. [Topics distribution](#8-topics-distribution)
+8. [Topics' distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
 10. [Conclusions](#10-conclusions)
 11. [Remarks](#11-remarks)
@@ -117,7 +117,7 @@ LDA.vis also allows for a general visualisation of the topics (left panel view) 
 
 Finally, users can visualise the most relevant terms for a cluster of topics by applying *k-means clustering* in the global view panel (left). The k-mean value is calculated as the weighted average of the term distributions of the individual topics in the cluster. This allows for a finer analysis of the semantic space shared by a cluster of topics, ultimately improving interpretability. The terms are ranked according to *relevance* (ibid.), that is in decreasing order of probability.
 
-## 8. Topics distribution
+## 8. Topics' distribution
 Once the topics have been interpreted and possibly labeled for convenience, the next natural step would be to examine their distribution over the collection and per document. This allows the researcher to identify discursive patterns thoughout the documents for instance to discover how widely certain topics were or were not discussed. If LDA.vis provided a general overview of the structural composition of the topics which is instrumental to their understanding and interpretation, the topics' distribution will reveal their discursive quality, for instance by evidencing potential spikes in the different discourses or the relationship between them. 
 
 The analysis of the topics' distribution assumes even more importance and relevance particularly for humanities scholars in the case of timestamped documents (i.e., historical collections) as the distribution can be plotted over time. This operation, while essential to historicise the topics, is by no means straightforward. There are both technical (e.g., standard modelling tools such as MALLET or Gensim do not provide this functionality, the nature of the data) and theoretical reasons (e.g., whether time is understood as continuous or discreet) for why that is. Thus, depending on these determining factors, there are different strategies to achieve this goal.
