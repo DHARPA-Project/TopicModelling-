@@ -1,4 +1,4 @@
-ldamodel = model
+ldamodel = gensim.models.wrappers.ldamallet.malletmodel2ldamodel(ldamallet)
 dictionary = id2word
 corpus_csc = gensim.matutils.corpus2csc(corpus, num_terms=len(dictionary))
 import numpy as np
