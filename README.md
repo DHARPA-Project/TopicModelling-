@@ -28,6 +28,11 @@ As digitally available textual repositories are becoming larger and larger, the 
 7. [Understanding the topics through visualisation](#7-understanding-the-topics-through-visualisation)
 8. [Topics' distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
+
+   9.1 [Time is continuous and/or there are no gaps in my data](#91-time-is-continuous-and/or-there-are-no-gaps-in-my-data)
+   
+   9.2 [Time is discreet and/or there are gaps in my data](#92-time-is-discreet-and/or-there-are-gaps-in-my-data)
+   
 10. [Conclusions](#10-conclusions)
 11. [Remarks](#11-remarks)
 12. [License](#12-license)
@@ -132,6 +137,10 @@ For the topics' distribution over the entire collection, this is 'normalised' in
 
 ## 9. Historicise the topics
 When working with historical collections of timestamped documents, a step that bears great relevant for humanities scholars who try to answer historical questions is the possibility to plot the topics' distribution over time, i.e., historicise the topics. This truly effective operation in terms of revealing patterns and continuities over time can be performed in various ways depending on a number of factors of both technical and theoretical nature. For instance, standard LDA modelling tools such as MALLET or Gensim do not provide this functionality; sometimes, the nature of the data itself may not allow for meaningful historicisations (e.g., many time gaps in the collection); moreover, the way time is understood by the researcher (either as continuous or discreet) will determine the way the topics can be historicised. Thus, depending on these determining factors, there are different strategies to perform this step which necessarily require the critical intervention of the researcher.
+
+## 9.1 Time is continuous and/or there are no gaps in my data
+
+## 9.2 Time is discreet and/or there are gaps in my data
 
 
 
