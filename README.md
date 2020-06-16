@@ -29,9 +29,9 @@ As digitally available textual repositories are becoming larger and larger, the 
 8. [Topics' distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
 
-   9.1 [Time is continuous and/or there are no gaps in my data](#91-time-is-continuous-and-/-or-there-are-no-gaps-in-my-data)
+   9.1 [Time is continuous and/or there are no gaps in my data](#91-time-is-continuous-and/-or-there-are-no-gaps-in-my-data)
    
-   9.2 [Time is discreet and/or there are gaps in my data](#92-time-is-discreet-and-/-or-there-are-gaps-in-my-data)
+   9.2 [Time is discrete and/or there are gaps in my data](#92-time-is-discrete-and/-or-there-are-gaps-in-my-data)
    
 10. [Conclusions](#10-conclusions)
 11. [Remarks](#11-remarks)
@@ -136,14 +136,14 @@ This is calculated by dividing a topic's weight by the weight of all the topics 
 For the topics' distribution over the entire collection, this is 'normalised' in the sense that it is calculated by taking into account the lenght of each document (i.e., number of words). The calculation yields more accurate results, especially when working with collections from different sources with heterogenous documents. 
 
 ## 9. Historicise the topics
-When working with historical collections of timestamped documents, a step that bears great relevant for humanities scholars who try to answer historical questions is the possibility to plot the topics' distribution over time, i.e., historicise the topics. This truly effective operation in terms of revealing patterns and continuities over time can be performed in various ways depending on a number of factors of both technical and theoretical nature. For instance, standard LDA modelling tools such as MALLET or Gensim do not provide this functionality; sometimes, the nature of the data itself may not allow for meaningful historicisations (e.g., many time gaps in the collection); moreover, the way time is understood by the researcher (either as continuous or discreet) will determine the way the topics can be historicised. Thus, depending on these determining factors, there are different strategies to perform and visualise this step which necessarily require the critical intervention of the researcher.
+When working with historical collections of timestamped documents, a step that bears great relevant for humanities scholars who try to answer historical questions is the possibility to plot the topics' distribution over time, i.e., historicise the topics. This truly effective operation in terms of revealing patterns and continuities over time can be performed in various ways depending on a number of factors of both technical and theoretical nature. For instance, standard LDA modelling tools such as MALLET or Gensim do not provide this functionality; sometimes, the nature of the data itself may not allow for meaningful historicisations (e.g., many time gaps in the collection); moreover, the way time is understood by the researcher (either as continuous or discrete) will determine the way the topics can be historicised. Thus, depending on these determining factors, there are different strategies to perform and visualise this step which necessarily require the critical intervention of the researcher.
 
 ## 9.1 Time is continuous and/or there are no gaps in my data
 In this case, lines would be a good way for identifying spikes in discourse and for depicting the relationship between the various discourses in a corpus. The lines visualise the average topic weight aggregated over time, that is it is computed by adding all of the weights for a given topic in a time period and dividing by the total number of documents in that time period. The avearge so calculated will likely show sharp peaks and falls and could be recommended for instance in the case of research questions aiming to identify specific sudden changes in a type of discourse. 
 
 In the case of timeseries data, or data that is produced on regular intervals, the method of a rolling mean is typically used for capturing the general trend of a topic over time. If on the one hand this technique is very helpful for finding a time trend, on the other it flattens the topics' evolution to a smooth, possibly artificial, trend. So once again, the choice of one calculation over another depends on the dataset and the research question. As a rule of thumb, if the research enquiry relates to the long-term trend of a topic, then the rolling mean serves the purpose. If the research question is about a type of discourse at a particular point in time or over shorter periods, then computing the average would be recommended.
 
-## 9.2 Time is discreet and/or there are gaps in my data
-
+## 9.2 Time is discrete and/or there are gaps in my data
+Like in the case of time as continuous, if there are gaps in the dataset or time is conceived as discrete, the aggregation over time should be computed by calculating the average topic weight aggregated over time. The difference with the previous approach concers the way the averages are displayed which could for instance be done by choosing to use a bar chart. This would still show peaks and discontinuities in the topics' tren while encouraging a perspective of time as discrete. For the same reason, the rolling mean would not be recommended. 
 
 
