@@ -29,9 +29,9 @@ As digitally available textual repositories are becoming larger and larger, the 
 8. [Topics' distribution](#8-topics-distribution)
 9. [Historicise the topics](#9-historicise-the-topics)
 
-   9.1 [Time is continuous and/or there are no gaps in my data](#91-time-is-continuous-and/-or-there-are-no-gaps-in-my-data)
+   9.1 [Time is continuous and/or there are no gaps in my data](#91-time-is-continuous-and-or-there-are-no-gaps-in-my-data)
    
-   9.2 [Time is discrete and/or there are gaps in my data](#92-time-is-discrete-and/-or-there-are-gaps-in-my-data)
+   9.2 [Time is discrete and/or there are gaps in my data](#92-time-is-discrete-and-or-there-are-gaps-in-my-data)
    
 10. [Conclusions](#10-conclusions)
 11. [Remarks](#11-remarks)
@@ -144,6 +144,6 @@ In this case, lines would be a good way for identifying spikes in discourse and 
 In the case of timeseries data, or data that is produced on regular intervals, the method of a rolling mean is typically used for capturing the general trend of a topic over time. If on the one hand this technique is very helpful for finding a time trend, on the other it flattens the topics' evolution to a smooth, possibly artificial, trend. So once again, the choice of one calculation over another depends on the dataset and the research question. As a rule of thumb, if the research enquiry relates to the long-term trend of a topic, then the rolling mean serves the purpose. If the research question is about a type of discourse at a particular point in time or over shorter periods, then computing the average would be recommended.
 
 ## 9.2 Time is discrete and/or there are gaps in my data
-Like in the case of time as continuous, if there are gaps in the dataset or time is conceived as discrete, the aggregation over time should be computed by calculating the average topic weight aggregated over time. The difference with the previous approach concers the way the averages are displayed which could for instance be done by choosing to use a bar chart. This would still show peaks and discontinuities in the topics' tren while encouraging a perspective of time as discrete. For the same reason, the rolling mean would not be recommended. 
+Like in the case of time as continuous, if there are gaps in the dataset or time is conceived as discrete, the aggregation over time should be computed by calculating the average topic weight aggregated over time. The difference with the previous approach concerns the way the averages are displayed which could for instance be done by choosing to use a bar chart instead of lines. This would still show peaks and discontinuities in the topics' trends while encouraging to think of time as discrete. For the same reason, the rolling mean would not be recommended. 
 
 
