@@ -454,8 +454,6 @@ class PreparedData(namedtuple('PreparedData', ['topic_coordinates', 'topic_info'
 
 
 
-!pip install funcy
-
 from __future__ import absolute_import
 import funcy as fp
 import numpy as np
