@@ -14,6 +14,9 @@ import numpy as np
 import pandas as pd
 from scipy.stats import entropy
 from scipy.spatial.distance import pdist, squareform
+import funcy as fp
+import numpy as np
+from scipy.sparse import issparse
 
 try:
     from sklearn.manifold import MDS, TSNE
@@ -451,14 +454,6 @@ class PreparedData(namedtuple('PreparedData', ['topic_coordinates', 'topic_info'
 
     def to_json(self):
         return json.dumps(self.to_dict(), cls=NumPyEncoder)
-
-
-
-from __future__ import absolute_import
-import funcy as fp
-import numpy as np
-from scipy.sparse import issparse
-
 
 
 def _extract_data(topic_model, corpus, dictionary, doc_topic_dists=None):
