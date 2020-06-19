@@ -431,7 +431,7 @@ class PreparedData(namedtuple('PreparedData', ['topic_coordinates', 'topic_info'
                                                'R', 'lambda_step', 'plot_opts', 'topic_order'])):
   
 
-    def sorted_terms(self, topic=1, _lambda=.6):
+    def sorted_terms(self, topic=1, _lambda=1):
         """Retuns a dataframe using _lambda to calculate term relevance of a given topic."""
         tdf = pd.DataFrame(self.topic_info[self.topic_info.Category == 'Topic' + str(topic)])
         if _lambda < 0 or _lambda > 1:
