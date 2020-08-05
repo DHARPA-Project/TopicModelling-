@@ -71,6 +71,7 @@ d3.csv('/nbextensions/topic_distribution.csv', processDataChart).then(data => {
         var nr = d.topics.match(/(\d+)/);
         var nr = +nr[0] + 1 
         d.topics = nr
+        d.weight = +d.weight
     }
     return d
 }
