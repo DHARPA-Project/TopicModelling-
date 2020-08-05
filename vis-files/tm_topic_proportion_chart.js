@@ -1,4 +1,4 @@
-d3.csv('/nbextensions/topic_distribution.csv', processData).then(data => {
+d3.csv('/nbextensions/topic_distribution.csv', processDataChart).then(data => {
 
     const {
       BarChart,
@@ -65,3 +65,12 @@ d3.csv('/nbextensions/topic_distribution.csv', processData).then(data => {
       fill: "steelblue"
     })), document.querySelector('#topic-prop-chart'));
   });
+
+  function processDataChart(d) {
+    if (d.topics) {
+        var nr = d.topics.match(/(\d+)/);
+        var nr = +nr[0] + 1 
+        d.topics = nr
+    }
+    return d
+}
