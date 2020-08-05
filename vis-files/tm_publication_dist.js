@@ -35,12 +35,7 @@ d3.csv('/nbextensions/distribution_per_publication.csv').then(data => {
       dataKey: "publication_name"
     }), React.createElement(YAxis, {
       dataKey: data.topics
-    }, React.createElement(Label, {
-      value: "Weight (%)",
-      offset: 12,
-      position: "insideBottomLeft",
-      angle: -90
-    })), React.createElement(Legend, null), cols.map((item, index) => React.createElement(Bar, {
+    }, React.createElement(Legend, null), cols.map((item, index) => React.createElement(Bar, {
       dataKey: item,
       fill: d3.interpolateRdYlBu((index + 1) / cols.length)
     }))), document.querySelector('#pub-distribution-chart'));
