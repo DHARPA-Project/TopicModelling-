@@ -1,4 +1,4 @@
-d3.csv('topic_distribution.csv', processData).then(data => {
+d3.csv('/nbextensions/topic_distribution.csv', processData).then(data => {
 
     const {
       BarChart,
