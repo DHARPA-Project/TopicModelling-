@@ -46,7 +46,11 @@ d3.csv('/nbextensions/topic_distribution.csv', processDataChart).then(data => {
     }, React.createElement(CartesianGrid, {
       strokeDasharray: "3 3"
     }), React.createElement(XAxis, {
-      dataKey: "topics"
+      dataKey: "topics",
+      padding: {
+        left: 20,
+        right: 20
+      }
     }, React.createElement(Label, {
       value: "Topics",
       offset: -7,

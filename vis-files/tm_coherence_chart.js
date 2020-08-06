@@ -67,7 +67,7 @@ d3.csv('/nbextensions/coherence_values.csv').then(data => {
       }
     }, React.createElement(Label, {
       value: "Coherence",
-      offset: -7,
+      offset: 3,
       position: "insideLeft",
       angle: -90
     })), React.createElement(Tooltip, {
