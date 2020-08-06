@@ -15,8 +15,8 @@ d3.csv('/nbextensions/distribution_per_publication.csv').then(data => {
     Legend
   } = Recharts;
   ReactDOM.render( React.createElement(BarChart, {
-    width: 400,
-    height: 200,
+    width: 600,
+    height: 300,
     data: data,
     margin: {
       top: 30,

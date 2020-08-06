@@ -38,7 +38,7 @@ d3.csv('/nbextensions/coherence_values.csv').then(data => {
     }
 
     ReactDOM.render( React.createElement(LineChart, {
-      width: 500,
+      width: 600,
       height: 300,
       data: data,
       margin: {

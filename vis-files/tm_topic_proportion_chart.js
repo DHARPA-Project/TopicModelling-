@@ -34,8 +34,8 @@ d3.csv('/nbextensions/topic_distribution.csv', processDataChart).then(data => {
     };
   
     ReactDOM.render( React.createElement(BarChart, {
-      width: 400,
-      height: 200,
+      width: 600,
+      height: 300,
       data: data,
       margin: {
         top: 5,
