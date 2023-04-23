@@ -47,4 +47,4 @@ corpus_df['bigrams'] = [bigram_mod[doc] for doc in corpus_df['doc_prep_nostop']]
 
 corpus_model = corpus_df['bigrams']
 
-corpus_model.to_csv('corpus_model.csv')
+corpus_model.to_csv('corpus_model.csv', index=False)
