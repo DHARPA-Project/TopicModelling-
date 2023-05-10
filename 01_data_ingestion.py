@@ -7,17 +7,20 @@
 # users will need to provide publication names that match title information, or to use the metadata file
 
 
-# indicate name of the folder containing data for ex 'data_tm_workflow'
-folder_path = '/Users/mariellacc/Documents/TM/CI_newspaper_subcorpora'
-
 import os
 import pandas as pd
 import re
 import duckdb
 
+# indicate name of the folder containing data, for example 'data_tm_workflow'
+folder_name = 'CI_newspaper_subcorpora'
+
+# specify the absolute path to the folder containing data
+folder_path = os.path.abspath(folder_name)
+
 publications_list = os.listdir(folder_path)
 
-# remove DS_store files for mac OS
+# remove DS_store files for mac OS 
 publications_list = [ file for file in publications_list if '.DS_Store' not in file ]
 
 files_list = []
