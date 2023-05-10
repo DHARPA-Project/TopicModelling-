@@ -67,7 +67,7 @@ subset_df = duckdb.query(query).df()
 
 # read the content of the text files
 def readTxtContent(fileName):
-  with open(folder_path + fileName, 'r') as file:
+  with open(folder_path + fileName, 'r', encoding='utf-8') as file:
     return ' ' + file.read().replace('\n', ' ') + ' '
   
 
