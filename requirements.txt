@@ -5,7 +5,7 @@ cymem==2.0.4
 funcy==1.15
 future==0.18.2
 gensim==3.8.3
-joblib==0.17.0
+joblib==1.2.0
 murmurhash==1.0.4
 nltk==3.5
 numpy==1.19.4
